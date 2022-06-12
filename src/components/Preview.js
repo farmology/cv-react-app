@@ -5,7 +5,11 @@ function Preview(props) {
     return (
         <div className="preview">
             <h1>Preview</h1>
-            <h2>{personal.firstname}</h2>
+            <p>{personal.firstname}</p>
+            <p>{personal.lastname}</p>
+            <p>{personal.email}</p>
+            <p>{personal.number}</p>
+            <p>{personal.address}</p>
         </div>
     );
 }
