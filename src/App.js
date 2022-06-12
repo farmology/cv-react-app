@@ -1,32 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState }from 'react';
+import Display from './components/Display';
+import Preview from './components/Preview';
 
 function App() {
-  const [test, setTest] = useState();
+  const [personal, setPersonal] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    number: '',
+    address: ''
+  });
 
-  function logConsole(e) {
-    e.preventDefault();
-    console.log(test);
+  function updatePersonal(input) {
+    setPersonal(input);
   };
 
   return (
     <div className="App">
-      <form onSubmit={logConsole}>
-        <label htmlFor='name'>Name</label>
-        <input onChange={(e) => {setTest(e.target.value)}} type="text" id="name"/>
-        <label htmlFor='email'>E-mail</label>
-        <input type="text" id="email"/>
-        <label htmlFor='number'>Phone Number</label>
-        <input type="text" id="number"/>
-        <label htmlFor='schoolname'>School</label>
-        <input type="text" id="schoolname"/>
-        <label htmlFor='schoolyear'>Years Attended</label>
-        <input type="text" id="schoolyear"/>
-        <button type="submit">Submit</button>
-      </form>
-      <h1>{test}</h1>
-
+      <Display personal={personal} updatePersonal={updatePersonal}/>
+      <Preview updatePersonal={updatePersonal}/>
     </div>
   );
 }
