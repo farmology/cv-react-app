@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Display personal={personal} updatePersonal={updatePersonal}/>
-      <Preview updatePersonal={updatePersonal}/>
+      <Preview personal={personal} updatePersonal={updatePersonal}/>
     </div>
   );
 }

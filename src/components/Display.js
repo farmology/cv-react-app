@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 function Display(props) {
   
+
     function handleChange(e) {
-        props.setPersonal(e.target.value);
+        props.updatePersonal({ firstname: e.target.value });
     };
 
   return (
@@ -22,7 +23,7 @@ function Display(props) {
         
         <button type="submit">Submit</button>
       </form>
-      <h1>{props.personal.firstname}</h1>
+      
 
     </div>
   );
